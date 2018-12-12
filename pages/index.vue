@@ -1,38 +1,32 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        mt-app
-      </h1>
-      <h2 class="subtitle">
-        My splendiferous Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+  <div class="page-index">
+    <el-row>
+      <el-col :span="5">
+        <emenu/>
+      </el-col>
+      <el-col :span="19">
+        <Life />
+      </el-col>
+    </el-row>
+    <el-row :span="24">
+      <Artistic />
+    </el-row>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import Emenu from '@/components/index/menu.vue'
+import Life from '@/components/index/life.vue'
+import Artistic from '@/components/index/artistic.vue'
 export default {
   components: {
-    Logo
+    Emenu,
+    Life,
+    Artistic
   }
 }
 </script>
 
 <style lang="scss">
- @import "@/assets/css/index/index.scss";
-
+  @import "@/assets/css/index/index.scss";
 </style>
