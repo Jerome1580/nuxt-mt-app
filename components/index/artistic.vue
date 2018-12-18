@@ -44,12 +44,19 @@
   </section>
 </template>
 <script>
+import mockData from '@/assets/data/index_prod.js';
 export default {
   data: () => {
     return {
       kind: 'all',
       list: {
-        all: [],
+        all: [{
+          title:'青春光影电影院',
+          pos:'自费购买儿童票',
+          price:'26.9',
+          img:'//p0.meituan.net/deal/201108/05/3_0805163047.jpg@368w_208h_1e_1c',
+          url:'//abc.com'
+        }],
         part: [],
         spa: [],
         movie: [],
@@ -80,6 +87,8 @@ export default {
           url:'//abc.com'
         }
       })
+      //  服务器没有,自己 mock
+      r = mockData
       self.list[self.kind]=r.slice(0,9)
     }else{
       self.list[self.kind]=[]
@@ -109,6 +118,8 @@ export default {
               url:'//abc.com'
             }
           })
+          //  服务器没有,自己 mock
+          r = mockData
           self.list[self.kind]=r.slice(0,9)
         }else{
           self.list[self.kind]=[]

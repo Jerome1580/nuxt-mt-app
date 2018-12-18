@@ -16,9 +16,10 @@ router.get('/getPosition', async (ctx) => {
     }
   } = await axios.get(`http://cp-tools.cn/geo/getPosition?sign=${sign}`)
   if (status === 200) {
+    // 模拟
     ctx.body = {
-      province,
-      city
+      province:'海南省',
+      city:'三亚市'
     }
   } else {
     ctx.body = {

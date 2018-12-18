@@ -26,12 +26,18 @@ const store = () => new Vuex.Store({
       const {status:status2,data:{menu}}=await app.$axios.get('geo/menu')
       commit('home/setMenu',status2===200?menu:[])
       
-      /* const {status:status3,data:{result}}=await app.$axios.get('/search/hotPlace',{
+      let {status:status3,data:{result}}=await app.$axios.get('/search/hotPlace',{
         params:{
           city:app.store.state.geo.position.city.replace('市','')
         }
       })
-      commit('home/setHotPlace',status3===200?result:[]) */
+      // 本地数据库少,自己 一下
+      if(!result.length) {
+        result = [{name:'三里屯',type:'景点'},{name:'三里屯',type:'景点'},{name:'三里屯',type:'景点'},{name:'三里屯',type:'景点'},{name:'三里屯',type:'景点'}]
+      }
+      // ......
+
+      commit('home/setHotPlace',status3===200?result:[])
     }
   }
 })
