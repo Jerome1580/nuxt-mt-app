@@ -109,9 +109,11 @@ router.get('/resultsByKeywords', async (ctx) => {
     //     ? pois
     //     : []
     // }
+
+    // 接口未实现完全,需返回坐标,评价,图片,评分...等数据,导致产品列表页显示不出
     ctx.body = {
       count: 5,
-      pois: []
+      pois: [116.397428, 39.90923]
     }
   })
   

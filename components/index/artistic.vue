@@ -44,6 +44,7 @@
   </section>
 </template>
 <script>
+// mock 数据,服务器需要线上接口
 import mockData from '@/assets/data/index_prod.js';
 export default {
   data: () => {
