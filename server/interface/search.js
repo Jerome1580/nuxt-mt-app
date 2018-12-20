@@ -110,10 +110,27 @@ router.get('/resultsByKeywords', async (ctx) => {
     //     : []
     // }
 
-    // 接口未实现完全,需返回坐标,评价,图片,评分...等数据,导致产品列表页显示不出
+    // 接口未实现完全,需返回坐标,评价,图片,评分...等数据
+    pois = []
+    let i = 10;
+    while(i){
+      pois.push({
+        type:'美食;食物',
+        photos:[{url:'//p1.meituan.net/merchantpic/0c33305bef133d460805004248fabbdc5283840.jpg@240w_180h_1e_1c_1l|watermark=1&&r=2&p=9&x=2&y=2&relative=1&o=20|368w_208h_1e_1c'}],
+        name:'金真子纸上烤肉（双桥店）',
+        biz_ext:{
+          rating:'3.5',
+          cost:'162'
+        },
+        tag:'美食 人气店家',
+        tel:'136573143565',
+        location:'116.397428, 39.90923'
+      })
+      i--;
+    }
     ctx.body = {
       count: 5,
-      pois: [116.397428, 39.90923]
+      pois
     }
   })
   
