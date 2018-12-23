@@ -137,23 +137,37 @@ router.get('/resultsByKeywords', async (ctx) => {
   router.get('/products', async (ctx) => {
     let keyword = ctx.query.keyword || '旅游'
     let city = ctx.query.city || '北京'
-    let {
-      status,
-      data: {
-        product,
-        more
+    // let {
+    //   status,
+    //   data: {
+    //     product,
+    //     more
+    //   }
+    // } = await axios.get('http://cp-tools.cn/search/products', {
+    //   params: {
+    //     keyword,
+    //     city,
+    //     sign
+    //   }
+    // })
+    let product,more=[]
+    if (200) {
+      // 模拟数据
+      product = {
+        type:'美食;食物',
+        photos:[{url:'//p1.meituan.net/merchantpic/0c33305bef133d460805004248fabbdc5283840.jpg@240w_180h_1e_1c_1l|watermark=1&&r=2&p=9&x=2&y=2&relative=1&o=20|368w_208h_1e_1c'}],
+        name:'金真子纸上烤肉（双桥店）',
+        biz_ext:{
+          rating:'3.5',
+          cost:'162'
+        },
+        tag:'美食 人气店家',
+        tel:'136573143565',
+        location:'116.397428, 39.90923'
       }
-    } = await axios.get('http://cp-tools.cn/search/products', {
-      params: {
-        keyword,
-        city,
-        sign
-      }
-    })
-    if (status === 200) {
       ctx.body = {
         product,
-        more: ctx.isAuthenticated() ? more: [],
+        more: ctx.isAuthenticated() ? [product]: [],
         login: ctx.isAuthenticated()
       }
     }else{
