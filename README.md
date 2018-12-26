@@ -2,11 +2,11 @@
 
 - Vue(2.5)全家桶+ SSR + Koa2
 - Element-UI + Redis + MongoDB + Mongoose
-需要开启 redis 和 mongodb 服务
-涉及到 smtp 服务(nodemailer)
 
 > My splendiferous Nuxt.js project
 
+- 需要开启 redis 和 mongodb 服务
+- 涉及到 smtp 服务(nodemailer)
 ## Build Setup
 
 ``` bash
